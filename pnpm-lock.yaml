@@ -52,7 +52,7 @@ importers:
       '@stencil/react-output-target':
         specifier: workspace:*
         version: link:../../packages/react
-      '@stencil/vue-output-target':
+      '@wangs-ui/vue-output-target':
         specifier: workspace:*
         version: link:../../packages/vue
       '@types/puppeteer':
@@ -174,7 +174,7 @@ importers:
 
   example-project/component-library-vue:
     dependencies:
-      '@stencil/vue-output-target':
+      '@wangs-ui/vue-output-target':
         specifier: workspace:*
         version: link:../../packages/vue
       component-library:

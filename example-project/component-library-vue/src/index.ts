@@ -1,7 +1,7 @@
 /* eslint-disable */
 /* tslint:disable */
 /* auto-generated vue proxies */
-import { defineContainer, defineStencilSSRComponent, type StencilVueComponent } from '@stencil/vue-output-target/runtime';
+import { defineContainer, defineStencilSSRComponent, type StencilVueComponent } from '@wangs-ui/vue-output-target/runtime';
 
 import type { JSX } from 'component-library';
 

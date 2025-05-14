@@ -29,7 +29,7 @@ In order to work on specific output targets, you can use the `dev` command, e.g.
 ```sh
 pnpm run dev.angular # work on @stencil/angular-output-target
 pnpm run dev.react # work on @stencil/react-output-target
-pnpm run dev.vue # work on @stencil/vue-output-target
+pnpm run dev.vue # work on @wangs-ui/vue-output-target
 pnpm run dev # watches changes on all output targets
 ```
 
@@ -48,7 +48,7 @@ We are running a set of unit tests for individual output targets code as well as
 ```sh
 pnpm run test.unit.angular # run unit tests for @stencil/angular-output-target
 pnpm run test.unit.react # run unit tests for @stencil/react-output-target
-pnpm run test.unit.vue # run unit tests for @stencil/vue-output-target
+pnpm run test.unit.vue # run unit tests for @wangs-ui/vue-output-target
 pnpm run test.unit # run unit tests on all output targets
 ```
 
@@ -57,7 +57,7 @@ If you like to run tests on every change, run:
 ```sh
 pnpm run test.watch.angular # watch unit tests for @stencil/angular-output-target
 pnpm run test.watch.react # watch unit tests for @stencil/react-output-target
-pnpm run test.watch.vue # watch unit tests for @stencil/vue-output-target
+pnpm run test.watch.vue # watch unit tests for @wangs-ui/vue-output-target
 pnpm run test.watch # watch unit tests on all output targets
 ```
 
@@ -90,7 +90,7 @@ This project is structured as following:
     ├── packages                           # Stencil Output target packages
     │   ├── angular                        # package that publishes the `@stencil/angular-output-target`
     │   ├── react                          # package that publishes the `@stencil/react-output-target`
-    │   └── vue                            # package that publishes the `@stencil/vue-output-target`
+    │   └── vue                            # package that publishes the `@wangs-ui/vue-output-target`
     └── ...
 
 ## Deploying

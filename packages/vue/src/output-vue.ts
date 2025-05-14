@@ -44,7 +44,7 @@ export function generateProxies(
   const imports = `/* eslint-disable */
 /* tslint:disable */
 /* auto-generated vue proxies */
-import { ${importKeys.join(', ')} } from '@stencil/vue-output-target/runtime';\n`;
+import { ${importKeys.join(', ')} } from '@wangs-ui/vue-output-target/runtime';\n`;
 
   const generateTypeImports = () => {
     if (outputTarget.componentCorePackage !== undefined) {

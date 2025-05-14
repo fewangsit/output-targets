@@ -2,7 +2,7 @@
 | --------------------- | ------------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------- |
 | React Output Target   | [`@stencil/react-output-target`](https://www.npmjs.com/package/@stencil/react-output-target)     | [![version](https://img.shields.io/npm/v/@stencil/react-output-target/latest.svg)](https://www.npmjs.com/package/@stencil/react-output-target)     | [README](./packages/react/README.md)                 |
 | Angular Output Target | [`@stencil/angular-output-target`](https://www.npmjs.com/package/@stencil/angular-output-target) | [![version](https://img.shields.io/npm/v/@stencil/angular-output-target/latest.svg)](https://www.npmjs.com/package/@stencil/angular-output-target) | [README](./packages/angular/README.md)               |
-| Vue Output Target     | [`@stencil/vue-output-target`](https://www.npmjs.com/package/@stencil/vue-output-target)         | [![version](https://img.shields.io/npm/v/@stencil/vue-output-target/latest.svg)](https://www.npmjs.com/package/@stencil/vue-output-target)         | [README](./packages/vue/README.md)                   |
+| Vue Output Target     | [`@wangs-ui/vue-output-target`](https://www.npmjs.com/package/@wangs-ui/vue-output-target)         | [![version](https://img.shields.io/npm/v/@wangs-ui/vue-output-target/latest.svg)](https://www.npmjs.com/package/@wangs-ui/vue-output-target)         | [README](./packages/vue/README.md)                   |
 | SSR                   | [`@stencil/ssr`](https://www.npmjs.com/package/@stencil/ssr)                                     | [![version](https://img.shields.io/npm/v/@stencil/ssr/latest.svg)](https://www.npmjs.com/package/@stencil/ssr)                                     | [README](./packages/ssr/README.md)                   |
 
 # Introduction
@@ -43,14 +43,14 @@ Read more about using Stencil components in a React application in our [docs](ht
 In your Vue project, you can use the following command to install the output target:
 
 ```bash
-npm install @stencil/vue-output-target
+npm install @wangs-ui/vue-output-target
 ```
 
 Update the `stencil.config.ts` file to include the following:
 
 ```ts
 import type { Config } from '@stencil/core';
-import { vueOutputTarget } from '@stencil/vue-output-target';
+import { vueOutputTarget } from '@wangs-ui/vue-output-target';
 
 export const config: Config = {
   // ...

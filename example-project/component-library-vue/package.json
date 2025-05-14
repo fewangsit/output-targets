@@ -34,7 +34,7 @@
     "vitest": "^2.1.8"
   },
   "dependencies": {
-    "@stencil/vue-output-target": "workspace:*",
+    "@wangs-ui/vue-output-target": "workspace:*",
     "component-library": "workspace:*"
   }
 }

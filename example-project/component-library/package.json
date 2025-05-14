@@ -61,7 +61,7 @@
     "@stencil/angular-output-target": "workspace:*",
     "@stencil/core": "4.29.0",
     "@stencil/react-output-target": "workspace:*",
-    "@stencil/vue-output-target": "workspace:*",
+    "@wangs-ui/vue-output-target": "workspace:*",
     "@types/puppeteer": "2.0.1"
   }
 }

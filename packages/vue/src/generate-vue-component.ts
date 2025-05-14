@@ -120,7 +120,7 @@ export const ${tagNameAsPascal}: StencilVueComponent<${componentType}${modelType
     if (autoDefinedModels.length) {
       if (!findModel) {
         templateString += `,\n`;
-        templateString += `null, null`;
+        templateString += `undefined, undefined`;
       }
 
       templateString += `,\n`;

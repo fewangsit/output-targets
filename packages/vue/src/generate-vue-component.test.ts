@@ -189,7 +189,7 @@ export const MyComponent: StencilVueComponent<Components.MyComponent> = /*@__PUR
   'update:value',
   'update:modelValue'
 ],
-null, null,
+undefined, undefined,
 ['update:value', 'update:modelValue']);
 `);
   });

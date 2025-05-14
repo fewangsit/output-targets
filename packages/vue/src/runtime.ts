@@ -129,9 +129,9 @@ export const defineContainer = <Props, VModelType = string | number | boolean>(
        */
       const vModelDirective = {
         created: (el: HTMLElement) => {
-          const eventsNames = (Array.isArray(modelUpdateEvent) ? modelUpdateEvent : [modelUpdateEvent]).map((ev) =>
-            ev.replace(/-([a-z])/g, (g: string) => g[1].toUpperCase())
-          );
+          const eventsNames = (Array.isArray(modelUpdateEvent) ? modelUpdateEvent : [modelUpdateEvent])
+            .filter(Boolean)
+            .map((ev) => ev.replace(/-([a-z])/g, (g: string) => g[1].toUpperCase()));
           eventsNames.forEach((eventName: string) => {
             el.addEventListener(eventName, (e: Event) => {
               /**
@@ -153,6 +153,7 @@ export const defineContainer = <Props, VModelType = string | number | boolean>(
               el.addEventListener(eventName, (e: Event) => {
                 const custom = e as CustomEvent<any>;
                 if ((custom.target as HTMLElement).tagName === el.tagName) {
+                  e.stopImmediatePropagation();
                   emit(eventName, custom.detail);
                 }
               });

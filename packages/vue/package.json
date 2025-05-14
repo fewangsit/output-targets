@@ -1,6 +1,6 @@
 {
   "name": "@wangs-ui/vue-output-target",
-  "version": "0.10.10",
+  "version": "0.10.11",
   "description": "Vue output target for @stencil/core components.",
   "author": "Ionic Team",
   "homepage": "https://stenciljs.com/",

@@ -65,6 +65,7 @@ const getElementClasses = (
  * to customElements.define. Only set if `includeImportCustomElements: true` in your config.
  * @prop modelProp - The prop that v-model binds to (i.e. value)
  * @prop modelUpdateEvent - The event that is fired from your Web Component when the value changes (i.e. ionChange)
+ * @prop autoDefinedModels - The events that match v-model naming e.g 'update:<propName>' to automaticaly bind as model
  */
 export const defineContainer = <Props, VModelType = string | number | boolean>(
   name: string,
@@ -72,7 +73,8 @@ export const defineContainer = <Props, VModelType = string | number | boolean>(
   componentProps: string[] = [],
   emitProps: string[] = [],
   modelProp?: string,
-  modelUpdateEvent?: string
+  modelUpdateEvent?: string,
+  autoDefinedModels?: string[]
 ) => {
   /**
    * Create a Vue component wrapper around a Web Component.
@@ -145,6 +147,17 @@ export const defineContainer = <Props, VModelType = string | number | boolean>(
               }
             });
           });
+
+          if (autoDefinedModels?.length) {
+            autoDefinedModels.forEach((eventName: string) => {
+              el.addEventListener(eventName, (e: Event) => {
+                const custom = e as CustomEvent<any>;
+                if ((custom.target as HTMLElement).tagName === el.tagName) {
+                  emit(eventName, custom.detail);
+                }
+              });
+            });
+          }
         },
       };
 
@@ -253,7 +266,7 @@ export const defineContainer = <Props, VModelType = string | number | boolean>(
          * As a result, we conditionally call withDirectives with v-model components.
          */
         const node = h(name, propsToAdd, slots.default && slots.default());
-        return modelProp === undefined ? node : withDirectives(node, [[vModelDirective]]);
+        return modelProp === undefined && !autoDefinedModels?.length ? node : withDirectives(node, [[vModelDirective]]);
       };
     },
     {

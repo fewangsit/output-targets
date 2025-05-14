@@ -109,6 +109,24 @@ export const ${tagNameAsPascal}: StencilVueComponent<${componentType}${modelType
       templateString += `'${targetProp}', '${findModel.event}'`;
     }
 
+    /**
+     * Auto defines v-model bindings from events that include 'update:'.
+     * Matches 'update:<propName>' format and includes if the prop exists.
+     */
+    const autoDefinedModels = emits.filter(
+      (emit) => emit.toLowerCase().includes('update:') && props.some((p) => p.includes(emit.split(':')[1]))
+    );
+
+    if (autoDefinedModels.length) {
+      if (!findModel) {
+        templateString += `,\n`;
+        templateString += `null, null`;
+      }
+
+      templateString += `,\n`;
+      templateString += `[${autoDefinedModels.join(', ')}]`;
+    }
+
     templateString += `)${ssrCondition};\n`;
 
     return templateString;

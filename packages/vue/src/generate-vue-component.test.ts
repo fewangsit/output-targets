@@ -94,6 +94,106 @@ export const MyComponent: StencilVueComponent<Components.MyComponent, Components
 `);
   });
 
+  it('should auto define v-model bindings', () => {
+    const generateComponentDefinition = createComponentDefinition('Components', {
+      proxiesFile: './src/components.ts',
+    });
+    const output = generateComponentDefinition({
+      properties: [
+        {
+          name: 'value',
+          internal: false,
+          mutable: false,
+          optional: false,
+          required: false,
+          type: 'string',
+          complexType: {
+            original: '',
+            resolved: '',
+            references: {},
+          },
+          getter: true,
+          setter: true,
+          docs: {
+            text: '',
+            tags: [],
+          },
+        },
+        {
+          name: 'modelValue',
+          internal: false,
+          mutable: false,
+          optional: false,
+          required: false,
+          type: 'string',
+          complexType: {
+            original: '',
+            resolved: '',
+            references: {},
+          },
+          getter: true,
+          setter: true,
+          docs: {
+            text: '',
+            tags: [],
+          },
+        },
+      ],
+      tagName: 'my-component',
+      methods: [],
+      events: [
+        {
+          internal: false,
+          name: 'update:value',
+          method: '',
+          bubbles: true,
+          cancelable: true,
+          composed: false,
+          docs: {
+            text: '',
+            tags: [],
+          },
+          complexType: {
+            original: '',
+            resolved: '',
+            references: {},
+          },
+        },
+        {
+          internal: false,
+          name: 'update:modelValue',
+          method: '',
+          bubbles: true,
+          cancelable: true,
+          composed: false,
+          docs: {
+            text: '',
+            tags: [],
+          },
+          complexType: {
+            original: '',
+            resolved: '',
+            references: {},
+          },
+        },
+      ],
+    });
+
+    expect(output).toEqual(`
+export const MyComponent: StencilVueComponent<Components.MyComponent> = /*@__PURE__*/ defineContainer<Components.MyComponent>('my-component', undefined, [
+  'value',
+  'modelValue',
+  'update:value',
+  'update:modelValue'
+], [
+  'update:value',
+  'update:modelValue'
+],
+null, null,
+['update:value', 'update:modelValue']);
+`);
+  });
+
   it('should add router and v-model bindings', () => {
     const generateComponentDefinition = createComponentDefinition('Components', {
       componentModels: [
